@@ -10,3 +10,4 @@ dnf -y install httpd
 
 systemctl enable --now httpd
 kcli create host kvm -H 127.0.0.1 local
+kcli create pool -p /var/www/html default
