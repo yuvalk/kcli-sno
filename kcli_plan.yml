@@ -21,7 +21,10 @@
   files:
   - 00_prepare.sh
   - 01_create_iso.sh
+  - 02_install_baremetal.sh
   - sno_params.yml
+  - origin: helpers/racadm.sh
+    path: /root/bin/racadm.sh
   - origin: {{ pullsecret }}
     path: /root/openshift_pull.json
   scripts:
