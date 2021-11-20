@@ -22,6 +22,8 @@
   - 00_prepare.sh
   - 01_create_iso.sh
   - sno_params.yml
+  - origin: {{ pullsecret }}
+    path: /root/openshift_pull.json
   scripts:
   - deploy.sh
 
