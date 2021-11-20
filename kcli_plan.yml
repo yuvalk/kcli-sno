@@ -1,0 +1,26 @@
+{{ cluster }}-installer:
+  image: {{ image }}
+  playbook: {{ playbook }}
+  pool: {{ pool }}
+  wait: {{ installer_wait }}
+  numcpus: {{ numcpus }}
+  uefi_legacy: false
+{% if 'rhel' in image %}
+  networkwait: {{ rhnwait }}
+{% endif %}
+  memory: {{ memory }}
+  privatekey: true
+  notify: {{ notify }}
+  nets:
+  - name: {{ net }}
+{% if installer_mac != None %}
+    mac: {{ mac }}
+{% endif %}
+  disks:
+  - {{ disk_size }}
+  files:
+  - 00_prepare.sh
+  - 01_create_iso.sh
+  scripts:
+  - deploy.sh
+

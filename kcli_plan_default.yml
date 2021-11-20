@@ -1,0 +1,19 @@
+cluster: testk
+domain: lab.local
+version: nightly
+tag: '4.9'
+
+# installer defaults:
+image: centos8
+pool: default
+installer_wait: false
+installer_mac:
+playbook: false
+numcpus: 4
+memory: 4096
+rhnregister: true
+networkwait: 30
+notify: true
+net: baremetal
+disk_size: 30
+
