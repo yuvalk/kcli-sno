@@ -21,6 +21,7 @@
   files:
   - 00_prepare.sh
   - 01_create_iso.sh
+  - sno_params.yml
   scripts:
   - deploy.sh
 

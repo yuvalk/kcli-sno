@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kcli create cluster openshift -P sno=true {{ cluster }}
+kcli create cluster openshift --paramfile sno_params.yml {{ cluster }}

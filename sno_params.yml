@@ -1,0 +1,11 @@
+cluster: {{ cluster }}
+domain: {{ domain }}
+version: {{ version }}
+tag: {{ tag }}
+masters: 1
+workers: 0
+sno: true
+sno_dns: true
+{% if api_ip != None %}
+api_ip: {{ api_ip }}
+{% endif %}

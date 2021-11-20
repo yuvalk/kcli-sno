@@ -17,3 +17,5 @@ notify: true
 net: baremetal
 disk_size: 30
 
+# sno defaults
+api_ip:
