@@ -20,3 +20,5 @@ disk_size: 30
 
 # sno defaults
 api_ip:
+sno_bmc_username: root
+sno_bmc_password: calvin
