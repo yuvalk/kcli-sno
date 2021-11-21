@@ -1,18 +1,17 @@
 {{ cluster }}-installer:
   image: {{ image }}
-  playbook: {{ playbook }}
   pool: {{ pool }}
   wait: {{ installer_wait }}
   numcpus: {{ numcpus }}
+  privatekey: {{ privatekey }}
   uefi_legacy: false
 {% if 'rhel' in image %}
   networkwait: {{ rhnwait }}
 {% endif %}
   memory: {{ memory }}
-  privatekey: true
   notify: {{ notify }}
   nets:
-  - name: {{ net }}
+  - {{ network }}
 {% if installer_mac != None %}
     mac: {{ mac }}
 {% endif %}
@@ -23,10 +22,9 @@
   - 01_create_iso.sh
   - 02_install_baremetal.sh
   - sno_params.yml
-  - origin: helpers/racadm.sh
+  - origin: racadm.sh
     path: /root/bin/racadm.sh
   - origin: {{ pull_secret }}
     path: /root/openshift_pull.json
   scripts:
   - deploy.sh
-
