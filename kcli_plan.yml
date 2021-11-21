@@ -25,7 +25,7 @@
   - sno_params.yml
   - origin: helpers/racadm.sh
     path: /root/bin/racadm.sh
-  - origin: {{ pullsecret }}
+  - origin: {{ pull_secret }}
     path: /root/openshift_pull.json
   scripts:
   - deploy.sh
