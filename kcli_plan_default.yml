@@ -2,7 +2,7 @@ cluster: testk
 domain: lab.local
 version: nightly
 tag: '4.9'
-pullsecret: openshift_pull.json
+pull_secret: openshift_pull.json
 
 # installer defaults:
 image: centos8
