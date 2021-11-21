@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo yum -y install vim wget
+
 sudo yum -y install libvirt libvirt-daemon-driver-qemu qemu-kvm
 sudo usermod -aG qemu,libvirt $(id -un)
 newgrp libvirt
