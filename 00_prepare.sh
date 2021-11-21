@@ -1,11 +1,6 @@
 #!/bin/bash
 
-sudo yum -y install vim wget
-
-sudo yum -y install libvirt libvirt-daemon-driver-qemu qemu-kvm
-sudo usermod -aG qemu,libvirt $(id -un)
-newgrp libvirt
-systemctl enable --now libvirtd
+yum -y install vim wget
 
 dnf -y copr enable karmab/kcli ; dnf -y install kcli
 dnf -y install httpd
@@ -18,5 +13,5 @@ gpgcheck=0""" > /etc/yum.repos.d/racadm.repo
 dnf -y install openssl-devel srvadmin-idracadm7
 
 systemctl enable --now httpd
-kcli create host kvm -H 127.0.0.1 local
-kcli create pool -p /var/www/html default
+
+test -f /root/.ssh/id_rsa.pub || ssh-keygen -t rsa -N '' -f /root/.ssh/id_rsa
