@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kcli create cluster openshift --paramfile sno_params.yml {{ cluster }}
+kcli create cluster openshift --paramfile /root/sno_params.yml {{ cluster }}
