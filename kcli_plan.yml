@@ -28,3 +28,8 @@
     path: /root/openshift_pull.json
   scripts:
   - deploy.sh
+{% if installer_wait %}
+  finishfiles:
+  - origin: /root/.kcli/clusters/{{ cluster }}/auth/kubeconfig
+    path: kubeconfig.{{ cluster }}
+{% endif %}
