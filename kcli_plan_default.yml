@@ -5,7 +5,7 @@ tag: '4.10'
 pull_secret: openshift_pull.json
 
 # installer defaults:
-image: centos8
+image: centos8stream
 pool: default
 installer_wait: false
 installer_mac:
