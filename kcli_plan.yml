@@ -18,6 +18,8 @@
   disks:
   - {{ disk_size }}
   files:
+  - origin: bashrc
+    path: /root/.bashrc
   - 00_prepare.sh
   - 01_create_iso.sh
   - 02_install_baremetal.sh
