@@ -2,7 +2,7 @@ CLUSTER=$1
 SERVER=$2
 USER=$3
 PASSWORD=$4
-ISO_URL="http://$(hostname -I | cut -f1 -d" " | xargs)/$CLUSTER.iso"
+ISO_URL="http://$(hostname -I | cut -f1 -d" " | xargs)/$CLUSTER-sno.iso"
 /opt/dell/srvadmin/bin/idracadm7 -r $SERVER -u $USER -p $PASSWORD remoteimage -s &&\
 /opt/dell/srvadmin/bin/idracadm7 -r $SERVER -u $USER -p $PASSWORD remoteimage -d &&\
 /opt/dell/srvadmin/bin/idracadm7 -r $SERVER -u $USER -p $PASSWORD remoteimage -c -l $ISO_URL &&\
