@@ -1,21 +1,21 @@
 info: |
     This plan deploys a bare metal SNO.
-    It currently only fully supports Dell machines.
     to use:
         create a .yaml parameters file, with at least the following:
         `cluster: <name>`
         `domain: <fqdn>`
-        `sno_bmc_ip: <ip of bare metal bmc>`
+        `bmc_ip: <ip of bmc>`
     optionally you can also specify:
         `tag: <ocp version>`
         `api_ip: <ip>`
-        `sno_bmc_usernae: <username>`
-        `sno_bmc_password: <password>`
+        `bmc_username: <username>`
+        `bmc_password: <password>`
+        `bmc_model: <model>`
     the plan creates a VM on which it installs kcli and then uses `kcli create cluster` to create an iso file, host it on http server and use redfish to attach that to the actual bare metal and boot it.
 cluster: testk
 domain: lab.local
-version: nightly
-tag: '4.10'
+version: stable
+tag: '4.12'
 pull_secret: openshift_pull.json
 
 # installer defaults:
@@ -34,6 +34,7 @@ privatekey: false
 
 # sno defaults
 api_ip:
-sno_bmc_username: root
-sno_bmc_password: calvin
-sno_bmc_ip:
+bmc_username: root
+bmc_password: calvin
+bmc_ip:
+bmc_model: dell
